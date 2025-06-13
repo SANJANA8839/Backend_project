@@ -1,6 +1,7 @@
 // Description: This file defines the Video model schema for storing video information in a MongoDB database using Mongoose.
 
 import mongoose, {Schema} from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const videoSchema = new Schema({
 
@@ -42,6 +43,6 @@ const videoSchema = new Schema({
 )
 
 
-
+videoSchema.plugin(mongooseAggregatePaginate);
 
 export const Video = mongoose.model("Video", videoSchema);
